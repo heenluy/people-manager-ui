@@ -1,0 +1,68 @@
+<div class="dashboard-container container-fluid">
+  <div class="dashboard-nav flex-shrink-0 p-3 bg-light border-end">
+    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+      <img class="me-2" src="../../../../assets/logo-y.svg" alt="" width="72" height="32">
+      <span class="fs-5 fw-semibold d-none">Painel</span>
+    </a>
+    <ul class="list-unstyled ps-0">
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+          Pessoas
+        </button>
+        <div class="collapse show" id="home-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark rounded">Listar pessoas</a></li>
+            <li><a href="#" class="link-dark rounded">Criar pessoa</a></li>
+            <li><a href="#" class="link-dark rounded">Exibir pessoa</a></li>
+            <li><a href="#" class="link-dark rounded">Editar pessoa</a></li>
+            <li><a href="#" class="link-dark rounded">Remover pessoa</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+          Endereços
+        </button>
+        <div class="collapse" id="dashboard-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark rounded">Criar endereço</a></li>
+            <li><a href="#" class="link-dark rounded">Exibir endereços</a></li>
+            <li><a href="#" class="link-dark rounded">Definir principal</a></li>
+            <li><a href="#" class="link-dark rounded">Exibir principal</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+          Usuários
+        </button>
+        <div class="collapse" id="orders-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark rounded">Listar usuários</a></li>
+            <li><a href="#" class="link-dark rounded">Listar cargos</a></li>
+            <li><a href="#" class="link-dark rounded">Criar cargo</a></li>
+            <li><a href="#" class="link-dark rounded">Deletar usuário</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="border-top my-3"></li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+          Minha conta
+        </button>
+        <div class="collapse" id="account-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark rounded">Informações</a></li>
+            <li><a href="#" class="link-dark rounded">Configurações</a></li>
+            <li><a href="#" class="link-dark rounded">Sair</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="dashboard-content bg-light p-4">
+    <div class="rounded-3 w-100 h-100 bg-light border"></div>
+    <!-- <router-outlet></router-outlet> -->
+  </div>
+  <div class="dashboard-footer bg-secondary"></div>
+</div>
