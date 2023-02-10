@@ -100,7 +100,19 @@
 .dashboard-footer {
   height: 100%;
   width: 100%;
+  background-color: #e6e6e6;
   grid-area: foot;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+
+  a {
+    text-decoration: none;
+    display: flex;
+    align-items: baseline;
+    gap: 0.2rem;
+  }
 }
 
 .bd-placeholder-img {

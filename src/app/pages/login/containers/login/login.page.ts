@@ -1,25 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss']
 })
-export class LoginPage {
+export class LoginPage implements OnInit {
   form: FormGroup;
 
-  constructor (private fb: FormBuilder, private route: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private route: Router,
+    private authService: AuthService,
+  ) 
+  {
     this.form = this.fb.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required]
+      email: ['developer@account.dev', Validators.required],
+      password: ['developer', Validators.required]
     });
   }
 
+  ngOnInit(): void {
+    this.authService.getHealth();
+  }
+
   login() {
-    console.log(`Email: ${ this.form.value['email'] }`);
-    console.log(`Senha: ${ this.form.value['password'] }`);
-    this.route.navigateByUrl('/dashboard');
+    this.authService.login(this.form.value['email'], this.form.value['password'])
+      .subscribe(() => this.route.navigateByUrl('/dashboard'));
   }
 }

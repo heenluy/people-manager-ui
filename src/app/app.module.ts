@@ -16,7 +16,9 @@ import { LoginModule } from './pages/login/login.module';
     HttpClientModule,
     LoginModule
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
