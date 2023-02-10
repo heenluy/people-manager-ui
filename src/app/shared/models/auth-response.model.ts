@@ -1,4 +1,4 @@
-export interface SuccessAuthResponse {
+export interface TokenResponse {
     type: string,
     access_token: Token,
     refresh_token: Token
