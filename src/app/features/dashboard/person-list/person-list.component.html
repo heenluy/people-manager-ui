@@ -1,0 +1,36 @@
+<div class="container-fluid d-flex justify-content-center align-items-start h-100 overflow-auto">
+  <div
+    class="spinner-grow text-dark align-self-center"
+    style="width: 5rem; height: 5rem;"
+    role="status"
+    *ngIf="!fetched && loading"
+  >
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <table class="table table-striped" *ngIf="fetched">
+      <thead>
+        <tr>
+          <th scope="col">Cod.</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Sobrenome</th>
+          <th scope="col">Nascimento</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of persons">
+          <th scope="row">{{ p.personId }}</th>
+          <td>{{ p.firstName }}</td>
+          <td>{{ p.lastName }}</td>
+          <td>{{ p.dateOfBirth | date:'dd/MM/y' }}</td>
+          <td>
+            <button type="button" class="btn btn-primary btn-sm me-2">Editar</button>
+            <button type="button" class="btn btn-danger btn-sm">Apagar</button>
+          </td>
+        </tr>
+      </tbody>
+  </table>
+  <div *ngIf="!fetched && !loading" class="container">
+    <h2 class="text text-dark">The list is empty!</h2>
+  </div>
+</div>

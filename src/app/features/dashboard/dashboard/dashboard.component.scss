@@ -1,3 +1,6 @@
+$link: #0dcaf0;
+$old: #d2f4ea;
+
 .b-example-divider {
   flex-shrink: 0;
   width: 1.5rem;
@@ -33,7 +36,7 @@
 .btn-toggle:hover,
 .btn-toggle:focus {
   color: rgba(0, 0, 0, .85);
-  background-color: #d2f4ea;
+  background-color: rgb($link, .2);
 }
 
 .btn-toggle::before {
@@ -59,8 +62,8 @@
   text-decoration: none;
 }
 .btn-toggle-nav a:hover,
-.btn-toggle-nav a:focus {
-  background-color: #d2f4ea;
+.active-link {
+  background-color: rgb($link, .2);
 }
 
 .scrollarea {
