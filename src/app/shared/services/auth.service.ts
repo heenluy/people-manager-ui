@@ -10,11 +10,10 @@ import { TokenResponse } from "../models/auth-response.model";
 @Injectable()
 export class AuthService {
 
-    hostUrl = "api";
     constructor(private http: HttpClient) {}
 
     createAccount(user: SimpleUser) {
-        return this.http.post<User>(this.hostUrl + "/users/save", user);
+        return this.http.post<User>("api/users/save", user);
     }
     
     login(email: string, password: string) {
@@ -28,11 +27,11 @@ export class AuthService {
         };
 
         return this.http.post<TokenResponse>(
-            this.hostUrl + "/token", { email, password }, httpOptions
+            "api/token", { email, password }, httpOptions
         )
         .pipe(
-            catchError(this.handleError),
             tap(res => this.setSession(res)),
+            catchError(this.handleError),
             shareReplay()
         );
     }
@@ -66,25 +65,37 @@ export class AuthService {
         return !this.isLoggedIn();
     }
 
-    getAccessExpiration(): moment.Moment {
+    private getAccessExpiration(): moment.Moment {
         const exp = localStorage.getItem("access_exp");
-        const expiresAt: string = JSON.parse(exp ?? "");
-        return moment(expiresAt);
+
+        if (exp) {
+            const expiresAt: string = JSON.parse(exp);
+            return moment(expiresAt);
+        
+        } else {
+            throw new Error("The 'access_exp' is null or not exists");
+        }
     }
 
-    getRefreshExpiration(): moment.Moment {
+    private getRefreshExpiration(): moment.Moment {
         const exp = localStorage.getItem("refresh_exp");
-        const expiresAt: string = JSON.parse(exp ?? "");
-        return moment(expiresAt);
+
+        if (exp) {
+            const expiresAt: string = JSON.parse(exp);
+            return moment(expiresAt);
+        
+        } else {
+            throw new Error("The 'refresh_exp' is null or not exists");
+        }
     }
 
     refreshTokens(value: string) {
-        return this.http.post<TokenResponse>(this.hostUrl +  "/refresh", { token: value })
+        return this.http.post<TokenResponse>("api/refresh", { token: value })
             .subscribe(res => this.setSession(res));
     }
 
     getHealth(): object {
-        return this.http.get<object>(this.hostUrl +  "/actuator/health")
+        return this.http.get<object>("api/actuator/health")
             .subscribe(data => console.log(data))
     }
 
@@ -96,5 +107,5 @@ export class AuthService {
             `Backend returned code ${error.status}, body was: `, error.error);
         }
         return throwError(() => new Error('Something bad happened; please try again later.'));
-      }
+    }
 }
