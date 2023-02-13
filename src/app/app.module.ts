@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginModule } from './pages/login/login.module';
+import { LoginModule } from './features/login/login.module';
 
 @NgModule({
   declarations: [

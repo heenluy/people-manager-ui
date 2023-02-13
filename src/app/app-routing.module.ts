@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginPage } from './pages/login/containers/login/login.page';
+import { LoginPage } from './features/login/login/login.page';
 
 const routes: Routes = [
   { path: 'singin', component: LoginPage, title: 'Sing In — Entrar no painel administrativo' },
