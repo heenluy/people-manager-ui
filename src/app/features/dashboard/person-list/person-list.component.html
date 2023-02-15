@@ -14,7 +14,7 @@
           <th scope="col">Nome</th>
           <th scope="col">Sobrenome</th>
           <th scope="col">Nascimento</th>
-          <th scope="col">Ações</th>
+          <th scope="col">Opções</th>
         </tr>
       </thead>
       <tbody>
@@ -24,8 +24,8 @@
           <td>{{ p.lastName }}</td>
           <td>{{ p.dateOfBirth | date:'dd/MM/y' }}</td>
           <td>
-            <button type="button" class="btn btn-primary btn-sm me-2">Editar</button>
-            <button type="button" class="btn btn-danger btn-sm">Apagar</button>
+            <a href="#" title="Editar pessoa" class="me-3"><i class="bi bi-pencil-square text-primary"></i></a>
+            <a href="#" title="Apagar pessoa"><i class="bi bi-trash text-danger"></i></a>
           </td>
         </tr>
       </tbody>
