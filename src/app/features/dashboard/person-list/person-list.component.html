@@ -7,7 +7,8 @@
   >
     <span class="visually-hidden">Loading...</span>
   </div>
-  <table class="table table-striped" *ngIf="fetched">
+  <div class="table-responsive w-100" *ngIf="fetched">
+    <table class="table table-striped table-hover">
       <thead>
         <tr>
           <th scope="col">Cod.</th>
@@ -30,7 +31,8 @@
         </tr>
       </tbody>
   </table>
+  </div>
   <div *ngIf="!fetched && !loading" class="container">
-    <h2 class="text text-dark">The list is empty!</h2>
+    <h2 class="text text-dark">Não há pessoas cadastradas!</h2>
   </div>
 </div>

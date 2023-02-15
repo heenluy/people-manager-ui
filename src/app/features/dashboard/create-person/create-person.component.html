@@ -1,1 +1,43 @@
-<p>create-person works!</p>
+<div class="container-fluid">
+    <form [formGroup]="form" class="w-100 h-100">
+        <div class="mb-3">
+            <label for="firstNameInput" class="form-label">Nome</label>
+            <input 
+                type="text"
+                class="form-control"
+                id="firstNameInput"
+                placeholder="Ex.: Leonardo"
+                formControlName="firstName"
+            >
+        </div>
+        <div class="mb-3">
+            <label for="lastNameInput" class="form-label">Sobrenome</label>
+            <input
+                type="text"
+                class="form-control"
+                id="lastNameInput"
+                placeholder="Ex.: Gomes"
+                formControlName="lastName"
+            >
+        </div>
+        <div class="mb-3">
+            <label for="dateOfBirthInput" class="form-label">Data de Nascimento</label>
+            <input
+                type="date"
+                class="form-control"
+                id="dateOfBirthInput"
+                formControlName="dateOfBirth"
+            >
+        </div>
+        <div>
+            <button
+                type="submit"
+                class="btn btn-primary"
+                [disabled]="!form.valid"
+                (click)="onSubmit()"
+            >
+            Confirmar
+            </button>
+        </div>
+    </form>
+</div>
