@@ -60,7 +60,7 @@ export class PersonService {
                 dateOfBirth: new Date(2001,3,14)
             }
         ];
-        return of(list).pipe(delay(3000));
+        return of(list).pipe(delay(1500));
         //return this.http.get<PersonHal>(this.baseUrl + "/get/all?page=0&size=3")
         //    .pipe(
         //        map(({ _embedded }) => _embedded.personList),
