@@ -7,6 +7,9 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { AuthInterceptor } from 'src/app/shared/services/auth.interceptor';
 import { PersonService } from './services/person.service';
 import { PersonListComponent } from './person-list/person-list.component';
+import { DeletePersonComponent } from './delete-person/delete-person.component';
+import { EditPersonComponent } from './edit-person/edit-person.component';
+import { CreatePersonComponent } from './create-person/create-person.component';
 
 
 
@@ -14,6 +17,9 @@ import { PersonListComponent } from './person-list/person-list.component';
   declarations: [
     DashboardComponent,
     PersonListComponent,
+    DeletePersonComponent,
+    EditPersonComponent,
+    CreatePersonComponent,
   ],
   imports: [
     CommonModule,
